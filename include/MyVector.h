@@ -14,6 +14,11 @@ private:
 public:
     MyVector() : data(nullptr), size(0), capacity(0) {}
 
+    ~MyVector()
+    {
+        delete[] data;
+    }
+
     void push_back(const T& value)
     {
         if (size == capacity)
@@ -49,6 +54,16 @@ public:
     T& operator[](std::size_t index)
     {
         return data[index];
+    }
+
+    std::size_t getSize() const
+    {
+        return size;
+    }
+
+    std::size_t getCapacity() const
+    {
+        return capacity;
     }
 };
 

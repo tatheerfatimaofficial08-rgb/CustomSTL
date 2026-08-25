@@ -13,5 +13,8 @@ int main()
     std::cout << "Element 1: " << numbers[1] << std::endl;
     std::cout << "Element 2: " << numbers[2] << std::endl;
 
+    std::cout << "Size: " << numbers.getSize() << std::endl;
+    std::cout << "Capacity: " << numbers.getCapacity() << std::endl;
+
     return 0;
 }
