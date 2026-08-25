@@ -16,5 +16,14 @@ int main()
     std::cout << "Size: " << numbers.getSize() << std::endl;
     std::cout << "Capacity: " << numbers.getCapacity() << std::endl;
 
+    try
+    {
+        std::cout << "Invalid element: " << numbers[3] << std::endl;
+    }
+    catch (const std::out_of_range& error)
+    {
+        std::cout << "Error: " << error.what() << std::endl;
+    }
+
     return 0;
 }

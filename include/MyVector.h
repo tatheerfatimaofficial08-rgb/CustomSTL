@@ -2,6 +2,7 @@
 #define MYVECTOR_H
 
 #include <cstddef>
+#include <stdexcept>
 
 template <typename T>
 class MyVector
@@ -53,6 +54,11 @@ public:
 
     T& operator[](std::size_t index)
     {
+        if (index >= size)
+        {
+            throw std::out_of_range("MyVector index out of range");
+        }
+
         return data[index];
     }
 
