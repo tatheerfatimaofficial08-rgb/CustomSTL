@@ -109,6 +109,18 @@ public:
         return data[size - 1].value;
     }
 
+    V& at(const K& key)
+    {
+        std::size_t index = findIndex(key);
+
+        if (index == size)
+        {
+            throw std::out_of_range("MyMap key not found");
+        }
+
+        return data[index].value;
+    }
+
     bool contains(const K& key) const
     {
         return findIndex(key) != size;
