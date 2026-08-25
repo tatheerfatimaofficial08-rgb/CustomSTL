@@ -5,6 +5,9 @@ int main()
 {
     MyVector<int> numbers;
 
+    std::cout << "Empty at start: "
+              << (numbers.empty() ? "Yes" : "No") << std::endl;
+
     numbers.push_back(10);
     numbers.push_back(20);
     numbers.push_back(30);
@@ -16,14 +19,16 @@ int main()
     std::cout << "Size: " << numbers.getSize() << std::endl;
     std::cout << "Capacity: " << numbers.getCapacity() << std::endl;
 
-    try
-    {
-        std::cout << "Invalid element: " << numbers[3] << std::endl;
-    }
-    catch (const std::out_of_range& error)
-    {
-        std::cout << "Error: " << error.what() << std::endl;
-    }
+    std::cout << "Empty after adding elements: "
+              << (numbers.empty() ? "Yes" : "No") << std::endl;
+
+    MyVector<int> reservedNumbers(5);
+
+    std::cout << "Reserved vector size: "
+              << reservedNumbers.getSize() << std::endl;
+
+    std::cout << "Reserved vector capacity: "
+              << reservedNumbers.getCapacity() << std::endl;
 
     return 0;
 }

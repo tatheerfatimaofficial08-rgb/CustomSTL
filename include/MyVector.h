@@ -15,6 +15,15 @@ private:
 public:
     MyVector() : data(nullptr), size(0), capacity(0) {}
 
+    MyVector(std::size_t initialCapacity)
+        : data(nullptr), size(0), capacity(initialCapacity)
+    {
+        if (capacity > 0)
+        {
+            data = new T[capacity];
+        }
+    }
+
     ~MyVector()
     {
         delete[] data;
@@ -70,6 +79,11 @@ public:
     std::size_t getCapacity() const
     {
         return capacity;
+    }
+
+    bool empty() const
+    {
+        return size == 0;
     }
 };
 
